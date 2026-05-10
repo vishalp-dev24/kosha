@@ -13,8 +13,8 @@ export function SecurityControlList({ dark = false }: { dark?: boolean }) {
         return (
           <motion.article
             key={control.title}
-            initial={reducedMotion ? false : { opacity: 0, y: 16 }}
-            whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+            initial={reducedMotion ? false : { opacity: 0 }}
+            whileInView={reducedMotion ? undefined : { opacity: 1 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ delay: index * 0.06, duration: 0.35 }}
             className={dark 

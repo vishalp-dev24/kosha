@@ -163,8 +163,8 @@ export function EvidencePacketHero() {
               {sources.map((source, index) => (
                 <motion.li
                   key={source.name}
-                  initial={reducedMotion ? false : { opacity: 0, x: -10 }}
-                  animate={reducedMotion ? undefined : { opacity: 1, x: 0 }}
+                  initial={reducedMotion ? false : { opacity: 0 }}
+                  animate={reducedMotion ? undefined : { opacity: 1 }}
                   transition={reducedMotion ? undefined : { delay: 0.18 + index * 0.12, duration: 0.34 }}
                   className="relative list-none"
                 >
@@ -236,8 +236,8 @@ export function TrustArchitecture() {
         {architecture.map(([title, detail], index) => (
           <motion.article
             key={title}
-            initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-            whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+            initial={reducedMotion ? false : { opacity: 0 }}
+            whileInView={reducedMotion ? undefined : { opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.06, duration: 0.34 }}
             className={cn(

@@ -99,8 +99,8 @@ export function QueryPlayground() {
               {retrievedChunks.map((chunk, index) => (
                 <motion.div
                   key={`${runId}-${chunk.chunk}`}
-                  initial={reducedMotion ? false : { opacity: 0.25, scale: 0.98 }}
-                  animate={reducedMotion ? undefined : { opacity: 1, scale: 1 }}
+                initial={reducedMotion ? false : { opacity: 0 }}
+                animate={reducedMotion ? undefined : { opacity: 1 }}
                   transition={{ delay: index * 0.26, duration: 0.35 }}
                   className="rounded-lg border border-copper/25 bg-copper/10 p-3"
                 >
@@ -109,8 +109,8 @@ export function QueryPlayground() {
                   <div className="mt-3 h-1.5 rounded-full bg-paper/10 overflow-hidden">
                     <motion.div
                       className="h-full rounded-full bg-copper"
-                      initial={reducedMotion ? false : { width: 0 }}
-                      animate={reducedMotion ? undefined : { width: `${chunk.confidence * 100}%` }}
+                initial={{ width: 0 }}
+                animate={{ width: `${chunk.confidence * 100}%` }}
                       transition={{ delay: 0.18 + index * 0.26, duration: 0.45 }}
                     />
                   </div>
@@ -119,10 +119,10 @@ export function QueryPlayground() {
             </div>
             <AnimatePresence mode="wait">
               <motion.div
-                key={`${runId}-${sourceMissing ? "refusal" : "answer"}`}
-                initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-                animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-                exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
+        key={`${runId}-${sourceMissing ? "refusal" : "answer"}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
                 transition={{ delay: 0.72, duration: 0.35 }}
                 className="mt-5 rounded-lg border border-paper/10 bg-ink/50 p-5"
               >

@@ -15,8 +15,8 @@ export function PipelineStepper() {
         {pipelineSteps.map((step, index) => (
           <motion.article
             key={step.title}
-            initial={reducedMotion ? false : { opacity: 0, y: 20 }}
-            whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+            initial={reducedMotion ? false : { opacity: 0 }}
+            whileInView={reducedMotion ? undefined : { opacity: 1 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ delay: index * 0.08, duration: 0.4, ease: "easeOut" }}
             className="group relative flex flex-col overflow-hidden rounded-xl border border-line bg-white p-5 shadow-sm transition-shadow hover:shadow-md"

@@ -79,8 +79,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </header>
         <motion.main
           key={pathname}
-          initial={reducedMotion ? false : { opacity: 0, y: 10 }}
-          animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+          initial={reducedMotion ? false : { opacity: 0 }}
+          animate={reducedMotion ? undefined : { opacity: 1 }}
           transition={{ duration: 0.22, ease: "easeOut" }}
           className="min-h-[calc(100vh-4rem)] px-4 py-6 md:px-6"
         >

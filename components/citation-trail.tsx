@@ -31,8 +31,8 @@ export function CitationTrail({ large = false }: { large?: boolean }) {
           {retrievedChunks.map((chunk, index) => (
             <motion.div
               key={chunk.chunk}
-              initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-              whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+              initial={reducedMotion ? false : { opacity: 0 }}
+              whileInView={reducedMotion ? undefined : { opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.35 }}
               className="relative flex flex-col overflow-hidden rounded-lg border border-line bg-paper/70 p-4"
