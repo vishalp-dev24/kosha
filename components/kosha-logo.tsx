@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 export function KoshaMark({ className }: { className?: string }) {
   return (
-    <svg className={cn("h-9 w-9", className)} viewBox="0 0 40 40" role="img" aria-label="Kosha">
+    <svg className={cn("h-9 w-9", className)} viewBox="0 0 40 40" aria-hidden="true" focusable="false">
       <rect width="40" height="40" rx="12" fill="#15171A" />
       <path d="M13 11.5V28.5" stroke="#F7F4EF" strokeWidth="3.2" strokeLinecap="round" />
       <path d="M25.8 11.8L16.8 20L25.8 28.2" stroke="#F7F4EF" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />

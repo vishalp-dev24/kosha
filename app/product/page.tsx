@@ -25,9 +25,7 @@ export default function ProductPage() {
                 <ButtonLink href="/app" variant="secondary">Open dashboard</ButtonLink>
               </div>
             </div>
-            <div className="scrollbar-thin overflow-x-auto rounded-[2rem] pb-2">
-              <AnimatedPipeline />
-            </div>
+            <AnimatedPipeline />
           </div>
         </section>
 

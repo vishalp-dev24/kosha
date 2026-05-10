@@ -15,7 +15,7 @@ export function AnimatedPipeline() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="paper-panel relative overflow-hidden rounded-[2rem] p-3 md:p-5" aria-label="Kosha document ingestion to cited API response visual">
+    <div className="paper-panel scrollbar-thin relative overflow-x-auto overflow-y-hidden rounded-[2rem] p-3 md:p-5" aria-label="Kosha document ingestion to cited API response visual">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(47,107,255,0.16),transparent_22rem)]" />
       <div className="relative grid min-w-[780px] grid-cols-[1fr_0.8fr_1.1fr] gap-4 lg:min-w-0">
         <div className="rounded-3xl border border-line/80 bg-white/62 p-4">
@@ -128,9 +128,6 @@ export function AnimatedPipeline() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="scrollbar-thin relative mt-3 overflow-x-auto pb-2 md:hidden" aria-hidden="true">
-        <div className="h-1 w-[780px] rounded-full bg-ink/10" />
       </div>
     </div>
   );

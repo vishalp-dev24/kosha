@@ -59,7 +59,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             <div className="scrollbar-thin flex gap-2 overflow-x-auto lg:hidden" aria-label="Mobile application navigation">
-              {appNavItems.slice(0, 8).map((item) => (
+              {appNavItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
