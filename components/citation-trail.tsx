@@ -11,12 +11,12 @@ export function CitationTrail({ large = false }: { large?: boolean }) {
     <div className="relative overflow-hidden rounded-[1.75rem] border border-line bg-paper/72 p-5">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(7,17,31,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(7,17,31,.04)_1px,transparent_1px)] bg-[size:34px_34px]" />
       <div className="relative">
-        <div className="flex items-center justify-between">
-          <div>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
             <div className="text-xs font-bold uppercase tracking-[0.16em] text-ink/48">Citation inspector</div>
             <h3 className="mt-2 font-display text-3xl tracking-[-0.06em] text-ink">Proof paths, not footnotes</h3>
           </div>
-          <div className="grid h-11 w-11 place-items-center rounded-full bg-copper/12 text-copper">
+          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-copper/12 text-copper">
             <GitBranch className="h-5 w-5" aria-hidden="true" />
           </div>
         </div>

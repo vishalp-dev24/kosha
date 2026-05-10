@@ -33,17 +33,17 @@ export function QueryPlayground() {
   }
 
   return (
-    <div className="ink-panel overflow-hidden rounded-[2rem] p-4 md:p-5">
-      <div className="grid gap-4 xl:grid-cols-[0.95fr_1.05fr]">
+    <div className="ink-panel overflow-hidden rounded-[2rem] p-4 md:p-6">
+      <div className="grid gap-6 xl:grid-cols-2">
         <div className="rounded-[1.5rem] border border-paper/10 bg-paper/7 p-4">
-          <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/42">Query playground</div>
-          <h2 className="mt-2 font-display text-4xl leading-none tracking-[-0.07em] text-paper">Test the refusal line before users find it.</h2>
+          <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/45">Query playground</div>
+          <h2 className="mt-2 font-display text-3xl leading-tight tracking-[-0.05em] text-paper xl:text-4xl">Test the refusal line before users find it.</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             <Field label="Environment" value={environment} setValue={setEnvironment} options={["Production", "Staging", "Eval"]} />
             <Field label="User role" value={role} setValue={setRole} options={["Claims reviewer", "Compliance auditor", "Support agent"]} />
             <Field label="Profile" value={profile} setValue={setProfile} options={["IRDAI policy-data workflow", "DPDP-ready controls", "CERT-In logging posture"]} />
           </div>
-          <label className="mt-5 block text-xs font-bold uppercase tracking-[0.16em] text-paper/42" htmlFor="query">
+          <label className="mt-5 block text-xs font-bold uppercase tracking-[0.16em] text-paper/45" htmlFor="query">
             Question
           </label>
           <textarea
@@ -84,7 +84,7 @@ export function QueryPlayground() {
           <div className="rounded-[1.5rem] border border-paper/10 bg-paper/7 p-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/42">Policy decision</div>
+                <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/45">Policy decision</div>
                 <div className={sourceMissing ? "mt-2 text-2xl font-semibold text-warning" : "mt-2 text-2xl font-semibold text-teal"}>
                   {sourceMissing ? "needs review / refused" : "answered"}
                 </div>
@@ -141,7 +141,7 @@ export function QueryPlayground() {
             </AnimatePresence>
           </div>
           <div className="scrollbar-thin overflow-x-auto rounded-[1.5rem] border border-paper/10 bg-paper/7">
-            <div className="min-w-[680px] divide-y divide-paper/10">
+            <div className="min-w-[640px] divide-y divide-paper/10">
               {retrievedChunks.map((chunk) => (
                 <div key={chunk.chunk} className="grid grid-cols-[1fr_0.6fr_0.8fr] gap-4 p-4 text-sm">
                   <div>
@@ -173,7 +173,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="text-xs font-bold uppercase tracking-[0.14em] text-paper/42">{label}</span>
+      <span className="text-xs font-bold uppercase tracking-[0.14em] text-paper/45">{label}</span>
       <select
         value={value}
         onChange={(event) => setValue(event.target.value)}

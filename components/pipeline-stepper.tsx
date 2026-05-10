@@ -8,7 +8,7 @@ export function PipelineStepper() {
 
   return (
     <div className="scrollbar-thin overflow-x-auto rounded-[1.75rem] border border-line bg-white/56 p-4">
-      <div className="grid min-w-[940px] grid-cols-5 gap-3">
+      <div className="grid min-w-[880px] grid-cols-5 gap-4">
         {pipelineSteps.map((step, index) => (
           <motion.article
             key={step.title}
@@ -21,7 +21,7 @@ export function PipelineStepper() {
             {index < pipelineSteps.length - 1 ? (
               <motion.div
                 aria-hidden="true"
-                className="absolute left-[calc(100%-0.25rem)] top-8 h-px w-5 bg-blue/50"
+                className="absolute left-[calc(100%+0.5rem)] top-8 h-px w-3 bg-blue/50"
                 initial={reducedMotion ? false : { scaleX: 0 }}
                 whileInView={reducedMotion ? undefined : { scaleX: 1 }}
                 viewport={{ once: true }}
