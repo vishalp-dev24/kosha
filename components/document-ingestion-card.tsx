@@ -22,7 +22,7 @@ export function DocumentIngestionCard() {
           <RotateCcw className="h-5 w-5" aria-hidden="true" />
         </motion.div>
       </div>
-            <div className="mt-6 grid gap-3">
+        <div className="mt-6 grid gap-3">
         {ingestionJobs.map((job, index) => (
           <motion.div
             key={job.file}
@@ -38,12 +38,14 @@ export function DocumentIngestionCard() {
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="truncate font-mono text-xs font-bold text-ink max-w-[140px] sm:max-w-[200px]">{job.file}</div>
+                  <div className="truncate font-mono text-xs font-bold text-ink min-w-0 flex-1">{job.file}</div>
                   <div className="text-xs text-ink/52 shrink-0">{job.pages} pages</div>
                 </div>
                 <div className="mt-2 flex items-center justify-between gap-3 text-xs flex-wrap">
-                  <span className="font-semibold text-teal">{job.stage}</span>
-                  <span className="text-ink/50 overflow-hidden whitespace-nowrap text-ellipsis text-right max-w-[120px] sm:max-w-[180px]">{job.issue}</span>
+                  <span className="rounded-full border border-line bg-white/80 px-2 py-1 font-semibold uppercase tracking-[0.12em] text-ink/54 shrink-0">
+                    {job.stage}
+                  </span>
+                  <span className="text-ink/50 truncate min-w-0">{job.issue}</span>
                 </div>
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-ink/8">
                   <motion.div

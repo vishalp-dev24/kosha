@@ -34,7 +34,7 @@ export function QueryPlayground() {
 
   return (
     <div className="ink-panel overflow-hidden rounded-[2rem] p-4 md:p-6">
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-6 xl:grid-cols-2 [&>*]:min-w-0">
         <div className="rounded-[1.5rem] border border-paper/10 bg-paper/7 p-4">
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/45">Query playground</div>
           <h2 className="mt-2 font-display text-3xl leading-tight tracking-[-0.05em] text-paper xl:text-4xl">Test the refusal line before users find it.</h2>
@@ -65,7 +65,7 @@ export function QueryPlayground() {
             <button
               type="button"
               onClick={copyRequest}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-paper/10 bg-paper/7 px-5 py-2.5 text-sm font-semibold text-paper/78 transition hover:bg-paper/12"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-paper/15 bg-paper/10 px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-paper/18"
             >
               <Copy className="h-4 w-4" aria-hidden="true" />
               Copy API request
@@ -93,7 +93,7 @@ export function QueryPlayground() {
                 confidence {sourceMissing ? "0.42" : "0.91"}
               </div>
             </div>
-            <div className="mt-7 grid gap-3 md:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3">
               {retrievedChunks.map((chunk, index) => (
                 <motion.div
                   key={`${runId}-${chunk.chunk}`}
@@ -141,12 +141,12 @@ export function QueryPlayground() {
             </AnimatePresence>
           </div>
           <div className="scrollbar-thin overflow-x-auto rounded-[1.5rem] border border-paper/10 bg-paper/7">
-            <div className="min-w-[320px] sm:min-w-[480px] md:min-w-[640px] divide-y divide-paper/10">
+            <div className="divide-y divide-paper/10">
               {retrievedChunks.map((chunk) => (
                 <div key={chunk.chunk} className="grid grid-cols-1 sm:grid-cols-[1fr_0.6fr_0.8fr] gap-2 sm:gap-4 p-3 md:p-4 text-sm">
                   <div className="min-w-0">
                     <div className="font-mono text-xs font-semibold text-paper truncate">{chunk.doc}</div>
-                    <div className="mt-1 text-paper/55 text-xs md:text-sm overflow-hidden text-ellipsis" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{chunk.reason}</div>
+                    <p className="mt-1 text-xs leading-5 text-paper/55 line-clamp-2 md:text-sm">{chunk.reason}</p>
                   </div>
                   <div className="font-mono text-paper/62 text-xs md:text-sm">p{chunk.page} · {chunk.chunk}</div>
                   <div className="text-teal text-xs md:text-sm">permission {chunk.permission}</div>

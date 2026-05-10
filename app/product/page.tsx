@@ -13,10 +13,10 @@ export default function ProductPage() {
     <MarketingShell>
       <main>
         <section className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+          <div className="grid items-center gap-10 overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <Badge tone="blue">Product</Badge>
-              <h1 className="mt-6 font-display text-6xl leading-[0.9] tracking-[-0.07em] md:text-8xl">A secure control room for document AI.</h1>
+              <h1 className="mt-6 font-display text-5xl leading-[0.92] tracking-[-0.05em] md:text-6xl lg:text-7xl">A secure control room for document AI.</h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/68">
                 Kosha handles ingestion, retrieval, citations, permissions, evals, audit logs, and the production API surface. The point is not to demo RAG. The point is to ship it safely.
               </p>

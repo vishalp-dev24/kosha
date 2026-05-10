@@ -75,7 +75,7 @@ export function SectionHeader({
   return (
     <div className="max-w-3xl">
       {eyebrow ? <Badge tone={invert ? "teal" : "slate"}>{eyebrow}</Badge> : null}
-      <h2 className={cn("mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-6xl", invert ? "text-paper" : "text-ink")}>
+      <h2 className={cn("mt-5 font-display text-3xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-4xl lg:text-5xl", invert ? "text-paper" : "text-ink")}>
         {title}
       </h2>
       {copy ? <p className={cn("mt-5 max-w-2xl text-base leading-7 md:text-lg", invert ? "text-paper/65" : "text-ink/65")}>{copy}</p> : null}
