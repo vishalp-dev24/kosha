@@ -18,10 +18,10 @@ export function MotionSection({
 
   return (
     <motion.section
-      initial={reducedMotion ? false : { y: 18 }}
-      whileInView={reducedMotion ? undefined : { y: 0 }}
+      initial={reducedMotion ? false : { opacity: 0 }}
+      whileInView={reducedMotion ? undefined : { opacity: 1 }}
       viewport={{ once: true, amount: 0.16 }}
-      transition={{ duration: 0.48, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.3, delay, ease: "easeOut" }}
       className={cn("relative", className)}
       id={id}
     >
