@@ -54,7 +54,7 @@ export function AnimatedPipeline() {
   }, [reducedMotion]);
 
   return (
-    <div className="paper-panel scrollbar-thin relative overflow-hidden rounded-[2rem] p-3 md:p-5" aria-label="Kosha document ingestion to cited API response visual">
+    <div className="paper-panel scrollbar-thin relative overflow-hidden rounded-2xl p-3 md:p-5" aria-label="Kosha document ingestion to cited API response visual">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(47,107,255,0.16),transparent_22rem)]" />
       <div className="relative overflow-hidden">
         <div 
@@ -75,7 +75,7 @@ export function AnimatedPipeline() {
                 initial={reducedMotion ? false : { opacity: 0, x: -16 }}
                 animate={reducedMotion ? undefined : { opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.12, duration: 0.45 }}
-                className="rounded-2xl border border-ink/10 bg-paper/72 p-3"
+                className="rounded-xl border border-ink/10 bg-paper/72 p-3"
               >
                 <div className="flex items-start gap-3">
                   <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-ink text-paper">
@@ -122,7 +122,7 @@ export function AnimatedPipeline() {
             <motion.div
               animate={reducedMotion ? undefined : { boxShadow: ["0 0 0 rgba(30,158,143,0)", "0 0 38px rgba(30,158,143,.36)", "0 0 0 rgba(30,158,143,0)"] }}
               transition={{ duration: 2.4, repeat: Infinity }}
-              className="mx-auto grid h-20 w-20 place-items-center rounded-[1.5rem] border border-teal/30 bg-teal/12"
+              className="mx-auto grid h-20 w-20 place-items-center rounded-xl border border-teal/30 bg-teal/12"
             >
               <LockKeyhole className="h-7 w-7 text-teal" aria-hidden="true" />
             </motion.div>

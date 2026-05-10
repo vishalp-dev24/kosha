@@ -8,7 +8,7 @@ export function DocumentIngestionCard() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="paper-panel overflow-hidden rounded-[1.75rem] p-4">
+    <div className="paper-panel overflow-hidden rounded-xl p-4">
       <div className="flex items-center justify-between">
         <div>
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-ink/48">Ingestion queue</div>
@@ -30,7 +30,7 @@ export function DocumentIngestionCard() {
             whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.08, duration: 0.35 }}
-            className="rounded-2xl border border-ink/10 bg-white/68 p-2.5 md:p-3"
+            className="rounded-xl border border-ink/10 bg-white/68 p-2.5 md:p-3"
           >
             <div className="flex items-start gap-2.5 md:gap-3">
               <div className="grid h-9 w-9 md:h-10 md:w-10 shrink-0 place-items-center rounded-xl bg-ink text-paper">

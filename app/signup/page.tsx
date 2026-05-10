@@ -11,8 +11,8 @@ export default function SignupPage() {
           <h1 className="mt-6 font-display text-6xl leading-[0.9] tracking-[-0.07em] md:text-8xl">Prove one safe workflow in seven days.</h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink/68">Bring a document set, one product question, and one user role. Kosha will show whether the workflow is production-safe.</p>
         </div>
-        <section className="paper-panel rounded-[2rem] p-5 md:p-8">
-          <div className="rounded-[1.5rem] bg-ink p-5 text-paper">
+        <section className="paper-panel rounded-2xl p-5 md:p-8">
+          <div className="rounded-xl bg-ink p-5 text-paper">
             <h2 className="font-display text-4xl tracking-[-0.07em]">Start a pilot</h2>
             <form className="mt-6 grid gap-4">
               {[

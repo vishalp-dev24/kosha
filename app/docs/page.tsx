@@ -21,11 +21,11 @@ export default function DocsPage() {
           The API returns a policy decision, answer, confidence, citations, and audit id. Retrieval state is not hidden from the product.
         </p>
         <MotionSection className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[1.75rem] border border-line bg-white/62 p-5">
+          <div className="rounded-xl border border-line bg-white/62 p-5">
             <SectionHeader title="Request contract" copy="Keep the request explicit. Ambiguous runtime context is where permission bugs enter." />
             <div className="mt-8 grid gap-3">
               {fields.map(([name, detail]) => (
-                <div key={name} className="rounded-2xl border border-line/70 bg-paper/72 p-4">
+                <div key={name} className="rounded-lg border border-line/70 bg-paper/72 p-4">
                   <div className="font-mono text-sm font-bold text-blue">{name}</div>
                   <div className="mt-1 text-sm leading-6 text-ink/62">{detail}</div>
                 </div>

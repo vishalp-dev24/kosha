@@ -24,11 +24,11 @@ export function ComplianceProfileCard({ profile }: { profile: ComplianceProfile 
   ];
 
   return (
-    <article className="group relative overflow-hidden rounded-[1.75rem] border border-ink/10 bg-paper/78 p-5 shadow-sm transition hover:-translate-y-1.5 hover:border-copper/35 hover:bg-white/72">
+    <article className="group relative overflow-hidden rounded-xl border border-ink/10 bg-paper/78 p-5 shadow-sm transition hover:-translate-y-1.5 hover:border-copper/35 hover:bg-white/72">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(184,115,51,0.16),transparent_16rem)] opacity-0 transition group-hover:opacity-100" />
       <div className="relative">
         <div className="flex items-start justify-between gap-4">
-          <div className="grid h-12 w-12 place-items-center rounded-2xl border border-ink/10 bg-ink text-paper">
+          <div className="grid h-12 w-12 place-items-center rounded-xl border border-ink/10 bg-ink text-paper">
             <Icon className="h-5 w-5" aria-hidden="true" />
           </div>
           <span className="rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-teal">

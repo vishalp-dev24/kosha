@@ -19,8 +19,8 @@ export default function LoginPage() {
 
 function AuthCard({ mode }: { mode: "login" | "signup" }) {
   return (
-    <section className="paper-panel rounded-[2rem] p-5 md:p-8">
-      <div className="rounded-[1.5rem] bg-ink p-5 text-paper">
+    <section className="paper-panel rounded-2xl p-5 md:p-8">
+      <div className="rounded-xl bg-ink p-5 text-paper">
         <h2 className="font-display text-4xl tracking-[-0.07em]">{mode === "login" ? "Log in" : "Start a pilot"}</h2>
         <p className="mt-2 text-sm leading-6 text-paper/58">Use your work email. SSO can be enabled during implementation.</p>
         <form className="mt-6 grid gap-4">

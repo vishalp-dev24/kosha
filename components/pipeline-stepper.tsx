@@ -7,7 +7,7 @@ export function PipelineStepper() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="rounded-[1.75rem] border border-line bg-white/56 p-3 md:p-4">
+    <div className="rounded-xl border border-line bg-white/56 p-3 md:p-4">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 xl:grid-cols-5">
         {pipelineSteps.map((step, index) => (
           <motion.article
@@ -16,7 +16,7 @@ export function PipelineStepper() {
             whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-120px" }}
             transition={{ delay: index * 0.16, duration: 0.45, ease: "easeOut" }}
-            className="relative flex flex-col rounded-2xl border border-ink/10 bg-paper/82 p-3 md:p-4"
+            className="relative flex flex-col rounded-xl border border-ink/10 bg-paper/82 p-3 md:p-4"
           >
             {index < pipelineSteps.length - 1 ? (
               <motion.div

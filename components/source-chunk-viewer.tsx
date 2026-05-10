@@ -2,7 +2,7 @@ import { retrievedChunks } from "@/data/kosha";
 
 export function SourceChunkViewer() {
   return (
-    <div className="rounded-[1.75rem] border border-paper/10 bg-paper/7 p-4">
+    <div className="rounded-xl border border-paper/10 bg-paper/7 p-4">
       <div className="flex items-center justify-between">
         <div>
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/42">Retrieved chunks</div>
@@ -14,7 +14,7 @@ export function SourceChunkViewer() {
       </div>
       <div className="mt-5 grid gap-3">
         {retrievedChunks.map((chunk) => (
-          <article key={chunk.chunk} className="rounded-2xl border border-paper/10 bg-ink/72 p-4">
+          <article key={chunk.chunk} className="rounded-xl border border-paper/10 bg-ink/72 p-4">
             <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
               <span className="text-paper">{chunk.doc}</span>
               <span className="text-paper/45">p{chunk.page} · {chunk.chunk}</span>

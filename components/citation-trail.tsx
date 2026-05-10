@@ -8,7 +8,7 @@ export function CitationTrail({ large = false }: { large?: boolean }) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="relative overflow-hidden rounded-[1.75rem] border border-line bg-paper/72 p-5">
+    <div className="relative overflow-hidden rounded-xl border border-line bg-paper/72 p-5">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(7,17,31,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(7,17,31,.04)_1px,transparent_1px)] bg-[size:34px_34px]" />
       <div className="relative">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -28,7 +28,7 @@ export function CitationTrail({ large = false }: { large?: boolean }) {
               whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.12, duration: 0.42 }}
-              className="relative flex flex-col rounded-2xl border border-ink/10 bg-white/70 p-3 md:p-4 shadow-sm"
+              className="relative flex flex-col rounded-xl border border-ink/10 bg-white/70 p-3 md:p-4 shadow-sm"
             >
               {index < retrievedChunks.length - 1 ? (
                 <>

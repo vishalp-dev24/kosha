@@ -8,11 +8,11 @@ export default function IngestionPage() {
       <AppPageHeader eyebrow="Document ingestion" title="Parse state, OCR quality, and review exceptions." copy="Do not hide ingestion failures. Bad parsing becomes bad retrieval, and bad retrieval becomes bad product behavior." />
       <div className="grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
         <DocumentIngestionCard />
-        <section className="rounded-[1.75rem] border border-paper/10 bg-paper/7 p-5">
+        <section className="rounded-xl border border-paper/10 bg-paper/7 p-5">
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/42">Exception queue</div>
           <div className="mt-5 grid gap-3">
             {ingestionJobs.map((job) => (
-              <article key={job.file} className="rounded-2xl border border-paper/10 bg-ink p-4">
+              <article key={job.file} className="rounded-xl border border-paper/10 bg-ink p-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="font-mono text-sm font-semibold text-paper">{job.file}</div>
                   <span className="rounded-full bg-warning/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-warning">{job.issue}</span>

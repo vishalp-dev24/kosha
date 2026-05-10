@@ -8,7 +8,7 @@ export function PipelineStatusBoard() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="rounded-[1.75rem] bg-white/10 p-5">
+    <div className="rounded-xl bg-white/10 p-5">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/45">Pipeline status board</div>
@@ -27,7 +27,7 @@ export function PipelineStatusBoard() {
               initial={reducedMotion ? false : { opacity: 0, y: 14 }}
               animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08, duration: 0.35 }}
-              className="rounded-2xl bg-ink p-4"
+              className="rounded-xl bg-ink p-4"
             >
               <div className="font-mono text-xs font-bold uppercase tracking-[0.13em] text-paper/45">{item.label}</div>
               <div className="mt-4 font-display text-3xl tracking-[-0.07em] text-paper">{item.count.toLocaleString()}</div>

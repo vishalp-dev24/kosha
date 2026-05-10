@@ -14,17 +14,17 @@ export function ApiKeyPanel() {
   }
 
   return (
-    <div className="rounded-[1.75rem] border border-paper/10 bg-paper/7 p-5">
+    <div className="rounded-xl border border-paper/10 bg-paper/7 p-5">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/42">Production API key</div>
           <h3 className="mt-2 font-display text-4xl tracking-[-0.07em] text-paper">One scoped key. No broad data leak.</h3>
         </div>
-        <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue/10 text-blue">
+        <div className="grid h-12 w-12 place-items-center rounded-xl bg-blue/10 text-blue">
           <KeyRound className="h-5 w-5" aria-hidden="true" />
         </div>
       </div>
-      <div className="mt-6 rounded-2xl border border-paper/10 bg-ink p-4">
+      <div className="mt-6 rounded-xl border border-paper/10 bg-ink p-4">
         <div className="font-mono text-sm text-paper">{key}</div>
         <div className="mt-4 flex flex-wrap gap-2">
           <button

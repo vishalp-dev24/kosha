@@ -106,7 +106,7 @@ export default function LandingPage() {
                   Scanned PDFs, regulator circulars, KYC SOPs, policy wording, regional-language files, and health summaries need source-aware controls before they touch users.
                 </p>
               </div>
-              <div className="rounded-[1.75rem] border border-paper/20 bg-paper/10 p-5">
+              <div className="rounded-xl border border-paper/20 bg-paper/10 p-5">
                 <div className="flex items-center gap-3">
                   <ShieldCheck className="h-5 w-5 text-copper" aria-hidden="true" />
                   <p className="text-sm font-semibold text-paper/90">Operational controls aligned to review workflows. No fake compliance certification claims.</p>
