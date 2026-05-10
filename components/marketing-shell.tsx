@@ -49,8 +49,10 @@ export function MarketingShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      {children}
-      <footer className="border-t border-ink/10 bg-ink text-paper">
+      <main className="mx-auto w-full max-w-7xl px-4 py-6 md:px-6">
+        {children}
+      </main>
+      <footer className="mt-auto border-t border-ink/10 bg-ink text-paper">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:px-6">
           <div>
             <KoshaLogo invert />

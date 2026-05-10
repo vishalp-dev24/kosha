@@ -23,13 +23,13 @@ export default function LandingPage() {
           <div className="absolute right-[5%] top-[20%] h-[30rem] w-[30rem] rounded-full opacity-[0.04] blur-[100px]"
             style={{background: "radial-gradient(circle, rgba(30,158,143,0.5) 0%, transparent 70%)"}} />
         </div>
-        <section className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-12 md:px-6 md:pb-20 md:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <section className="relative mx-auto grid max-w-7xl gap-12 px-4 pb-14 pt-16 md:gap-16 md:px-6 md:pb-20 md:pt-24 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <Badge tone="copper">Production-safe document AI</Badge>
             <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.04] tracking-[-0.04em] text-ink md:text-6xl">
               Production-safe RAG for regulated document AI.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/70 md:text-xl">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70 md:text-xl">
               Kosha gives fintech, insurtech, and healthtech teams cited answers, permission-aware retrieval, eval gates, and audit trails behind one API.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -38,7 +38,7 @@ export default function LandingPage() {
                 Review architecture
               </ButtonLink>
             </div>
-            <div className="mt-10 flex max-w-2xl flex-wrap gap-x-6 gap-y-3 border-t border-line pt-5">
+            <div className="mt-10 flex max-w-2xl flex-wrap gap-x-6 gap-y-3 border-t border-line/60 pt-5">
               {[
                 ["Cited by default", "source, page, chunk"],
                 ["Permission first", "role and purpose gate"],
@@ -57,9 +57,9 @@ export default function LandingPage() {
           <EvidencePacketHero />
         </section>
 
-        <MotionSection className="border-y border-line bg-sand/50 py-16 md:py-24">
+        <MotionSection className="border-y border-line bg-sand/50 py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+            <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
               <SectionHeader
                 eyebrow="The production RAG gap"
                 title="Vector search is not production readiness."
@@ -81,13 +81,13 @@ export default function LandingPage() {
               See product
             </ButtonLink>
           </div>
-          <div className="mt-10">
+          <div className="mt-12">
             <TrustArchitecture />
           </div>
         </MotionSection>
 
-        <MotionSection className="mx-auto max-w-7xl px-4 pb-16 md:px-6 md:pb-24">
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+        <MotionSection className="mx-auto max-w-7xl px-4 pb-20 md:px-6 md:pb-28">
+          <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
             <div>
               <Badge tone="teal">Product proof</Badge>
               <h2 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-6xl">
@@ -103,7 +103,7 @@ export default function LandingPage() {
 
         <MotionSection className="bg-ink py-16 text-paper md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
               <div>
                 <Badge tone="copper">Regulated workflows</Badge>
                 <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-6xl">
@@ -113,7 +113,7 @@ export default function LandingPage() {
                   Scanned PDFs, regulator circulars, KYC SOPs, policy wording, regional-language files, and health summaries need source-aware controls before they touch users.
                 </p>
               </div>
-              <div className="rounded-xl border border-paper/20 bg-paper/10 p-5">
+              <div className="rounded-2xl border border-paper/15 bg-paper/10 p-5">
                 <div className="flex items-center gap-3">
                   <ShieldCheck className="h-5 w-5 text-copper" aria-hidden="true" />
                   <p className="text-sm font-semibold text-paper/90">Operational controls aligned to review workflows. No fake compliance certification claims.</p>
@@ -127,7 +127,7 @@ export default function LandingPage() {
         </MotionSection>
 
         <MotionSection className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
             <div>
               <Badge tone="slate">Implementation model</Badge>
               <h2 className="mt-5 max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-6xl">
@@ -143,7 +143,7 @@ export default function LandingPage() {
 
         <MotionSection className="bg-slate py-16 text-paper md:py-24">
           <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
               <div>
                 <Badge tone="teal">Security posture</Badge>
                 <h2 className="mt-5 max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-6xl">
@@ -159,8 +159,8 @@ export default function LandingPage() {
         </MotionSection>
 
         <MotionSection className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
-          <div className="rounded-xl border border-line bg-white p-6 shadow-card md:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+          <div className="rounded-2xl border border-line bg-white p-8 shadow-card md:p-12">
+            <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 text-sm font-semibold text-ink/70">
                   <FileSearch className="h-4 w-4 text-copper" aria-hidden="true" />

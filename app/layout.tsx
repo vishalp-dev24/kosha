@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     "Secure RAG backend with citations, permissions, evals, audit logs, and one production API for regulated document workflows.",
   icons: {
     icon: "/icon.svg"
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1
   }
 };
 
@@ -32,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${sans.variable} ${mono.variable} min-h-screen overflow-x-hidden font-sans antialiased`}>{children}</body>
     </html>
   );
 }

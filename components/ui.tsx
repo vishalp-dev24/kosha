@@ -14,7 +14,7 @@ export function Badge({
   const tones: Record<string, { class: string; icon: React.ReactNode }> = {
     slate: { class: "bg-sand text-ink", icon: <Circle className="h-3 w-3" /> },
     blue: { class: "bg-blue/10 text-blue", icon: <Info className="h-3 w-3" /> },
-    copper: { class: "bg-copper/10 text-[#7a4317]", icon: <Info className="h-3 w-3" /> },
+    copper: { class: "bg-copper/10 text-copper", icon: <Info className="h-3 w-3" /> },
     teal: { class: "bg-teal/10 text-teal", icon: <CheckCircle2 className="h-3 w-3" /> },
     danger: { class: "bg-danger/10 text-danger", icon: <XCircle className="h-3 w-3" /> }
   };
@@ -41,7 +41,7 @@ export function ButtonLink({
   className?: string;
 }) {
   const variants = {
-    primary: "bg-blue text-white shadow-glow hover:bg-[#1558b0] focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
+    primary: "bg-[#274c77] text-white shadow-glow hover:bg-[#1558b0] focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
     secondary: "bg-white text-blue hover:bg-blue/5 focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
     dark: "bg-white/10 text-paper hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
   };
@@ -78,7 +78,7 @@ export function SectionHeader({
       <h2 className={cn("mt-4 font-display text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl", invert ? "text-paper" : "text-ink")}>
         {title}
       </h2>
-      {copy ? <p className={cn("mt-4 max-w-xl text-lg leading-relaxed", invert ? "text-paper/60" : "text-ink/60")}>{copy}</p> : null}
+      {copy ? <p className={cn("mt-3 max-w-xl text-lg leading-relaxed", invert ? "text-paper/60" : "text-ink/60")}>{copy}</p> : null}
     </div>
   );
 }
@@ -87,8 +87,8 @@ export function CodeBlock({ code, dark = true }: { code: string; dark?: boolean 
   return (
     <pre
       className={cn(
-        "scrollbar-thin overflow-x-auto rounded-xl border p-5 font-mono text-xs leading-6 md:text-sm",
-        dark ? "border-paper/10 bg-ink text-paper/90" : "border-line bg-white/70 text-ink"
+        "scrollbar-thin overflow-x-auto rounded-2xl border p-6 font-mono text-sm leading-6",
+        dark ? "border-paper/15 bg-ink text-paper/90" : "border-line/60 bg-white text-ink"
       )}
     >
       <code>{code}</code>
