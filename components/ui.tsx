@@ -1,24 +1,29 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Circle, CheckCircle2, XCircle, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Badge({
   children,
-  tone = "slate"
+  tone = "slate",
+  showIcon = true
 }: {
   children: React.ReactNode;
   tone?: "slate" | "blue" | "copper" | "teal" | "danger";
+  showIcon?: boolean;
 }) {
-  const tones = {
-    slate: "border-ink/10 bg-sand text-ink",
-    blue: "border-blue/20 bg-blue/10 text-blue",
-    copper: "border-copper/30 bg-copper/10 text-[#7a4317]",
-    teal: "border-teal/25 bg-teal/10 text-teal",
-    danger: "border-danger/30 bg-danger/10 text-danger"
+  const tones: Record<string, { class: string; icon: React.ReactNode }> = {
+    slate: { class: "bg-sand text-ink", icon: <Circle className="h-3 w-3" /> },
+    blue: { class: "bg-blue/10 text-blue", icon: <Info className="h-3 w-3" /> },
+    copper: { class: "bg-copper/10 text-[#7a4317]", icon: <Info className="h-3 w-3" /> },
+    teal: { class: "bg-teal/10 text-teal", icon: <CheckCircle2 className="h-3 w-3" /> },
+    danger: { class: "bg-danger/10 text-danger", icon: <XCircle className="h-3 w-3" /> }
   };
 
+  const style = tones[tone];
+
   return (
-    <span className={cn("inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-[-0.01em]", tones[tone])}>
+    <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold tracking-[-0.01em]", style.class)}>
+      {showIcon && style.icon}
       {children}
     </span>
   );
@@ -36,9 +41,9 @@ export function ButtonLink({
   className?: string;
 }) {
   const variants = {
-    primary: "bg-blue text-white shadow-glow hover:bg-[#1558b0]",
-    secondary: "border border-line bg-white text-blue hover:border-blue/35 hover:bg-blue/5",
-    dark: "border border-paper/20 bg-paper/10 text-paper hover:bg-paper/20"
+    primary: "bg-blue text-white shadow-glow hover:bg-[#1558b0] focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
+    secondary: "bg-white text-blue hover:bg-blue/5 focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2",
+    dark: "bg-white/10 text-paper hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
   };
 
   return (
@@ -73,7 +78,7 @@ export function SectionHeader({
       <h2 className={cn("mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-6xl", invert ? "text-paper" : "text-ink")}>
         {title}
       </h2>
-      {copy ? <p className={cn("mt-5 max-w-2xl text-base leading-7 md:text-lg", invert ? "text-paper/75" : "text-ink/70")}>{copy}</p> : null}
+      {copy ? <p className={cn("mt-5 max-w-2xl text-base leading-7 md:text-lg", invert ? "text-paper/65" : "text-ink/65")}>{copy}</p> : null}
     </div>
   );
 }

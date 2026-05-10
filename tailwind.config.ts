@@ -9,6 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        /* Semantic color tokens */
+        surface: {
+          primary: "var(--surface-primary)",
+          secondary: "var(--surface-secondary)",
+          tertiary: "var(--surface-tertiary)"
+        },
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          tertiary: "var(--text-tertiary)"
+        },
+        border: {
+          DEFAULT: "var(--border-default)",
+          subtle: "var(--border-subtle)"
+        },
+        accent: {
+          primary: "var(--accent-primary)",
+          success: "var(--accent-success)",
+          warning: "var(--accent-warning)",
+          danger: "var(--accent-danger)"
+        },
+        /* Legacy tokens */
         ink: "rgb(var(--ink-rgb) / <alpha-value>)",
         slate: "rgb(var(--slate-rgb) / <alpha-value>)",
         graphite: "rgb(var(--graphite-rgb) / <alpha-value>)",

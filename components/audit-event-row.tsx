@@ -29,11 +29,11 @@ export function AuditEventRow({ event, index = 0 }: { event: AuditEvent; index?:
         </span>
         {event.event}
       </div>
-      <div className="truncate text-paper/58">{event.actor}</div>
-      <div className="flex items-center gap-2 text-paper/58">
+      <div className="truncate text-paper/65">{event.actor}</div>
+      <div className="flex items-center gap-2 text-paper/65">
         <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
         <motion.span
-          animate={reducedMotion ? undefined : { opacity: [0.58, 1, 0.58] }}
+          animate={reducedMotion ? undefined : { opacity: [0.65, 1, 0.65] }}
           transition={{ duration: 2.4, repeat: Infinity, delay: index * 0.1 }}
         >
           {event.at}
