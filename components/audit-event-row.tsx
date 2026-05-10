@@ -21,13 +21,13 @@ export function AuditEventRow({ event, index = 0 }: { event: AuditEvent; index?:
       initial={reducedMotion ? false : { opacity: 0, x: -10 }}
       animate={reducedMotion ? undefined : { opacity: 1, x: 0 }}
       transition={{ delay: index * 0.08, duration: 0.32 }}
-      className="grid grid-cols-[140px_120px_90px_80px_100px] items-center gap-3 border-b border-paper/10 px-3 py-3 font-mono text-xs last:border-b-0"
+      className="grid grid-cols-[minmax(160px,1fr)_minmax(140px,1.2fr)_100px_90px_minmax(100px,0.8fr)] items-center gap-x-4 gap-y-2 border-b border-paper/10 px-4 py-3 font-mono text-xs last:border-b-0"
     >
       <div className="flex items-center gap-2 text-paper">
         <span className={cn("grid h-7 w-7 shrink-0 place-items-center rounded-full", serious ? "bg-warning/12 text-warning" : "bg-teal/12 text-teal")}>
           {serious ? <ShieldAlert className="h-3.5 w-3.5" aria-hidden="true" /> : <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />}
         </span>
-        <span className="truncate max-w-[130px]">{event.event}</span>
+        <span className="truncate">{event.event}</span>
       </div>
       <div className="truncate text-paper/65">{event.actor}</div>
       <div className="flex items-center gap-2 text-paper/65">

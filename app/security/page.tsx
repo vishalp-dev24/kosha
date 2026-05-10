@@ -28,8 +28,8 @@ export default function SecurityPage() {
           </div>
           <div className="relative mx-auto grid max-w-7xl gap-8 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeader invert eyebrow="Audit posture" title="Every production answer leaves a trace." copy="Query, retrieval, permission, answer, citation, eval, key, and retention events belong in the same reviewable stream." />
-            <div className="scrollbar-thin overflow-x-auto rounded-2xl border border-paper/15 bg-paper/5 pb-4">
-              <div className="min-w-max">
+            <div className="scrollbar-thin overflow-x-auto rounded-2xl border border-paper/15 bg-paper/5 px-2 pb-2">
+              <div className="min-w-[720px] px-2 py-2">
                 {auditEvents.map((event, index) => (
                   <AuditEventRow key={event.trace} event={event} index={index} />
                 ))}
