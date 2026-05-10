@@ -22,7 +22,7 @@ export function DocumentIngestionCard() {
           <RotateCcw className="h-5 w-5" aria-hidden="true" />
         </motion.div>
       </div>
-      <div className="mt-6 grid gap-3">
+            <div className="mt-6 grid gap-3">
         {ingestionJobs.map((job, index) => (
           <motion.div
             key={job.file}
@@ -30,20 +30,20 @@ export function DocumentIngestionCard() {
             whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.08, duration: 0.35 }}
-            className="rounded-2xl border border-ink/10 bg-white/68 p-3"
+            className="rounded-2xl border border-ink/10 bg-white/68 p-2.5 md:p-3"
           >
-            <div className="flex items-start gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-paper">
-                <FileScan className="h-4 w-4" aria-hidden="true" />
+            <div className="flex items-start gap-2.5 md:gap-3">
+              <div className="grid h-9 w-9 md:h-10 md:w-10 shrink-0 place-items-center rounded-xl bg-ink text-paper">
+                <FileScan className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="truncate font-mono text-xs font-bold text-ink">{job.file}</div>
-                  <div className="text-xs text-ink/52">{job.pages} pages</div>
+                  <div className="truncate font-mono text-xs font-bold text-ink max-w-[140px] sm:max-w-[200px]">{job.file}</div>
+                  <div className="text-xs text-ink/52 shrink-0">{job.pages} pages</div>
                 </div>
-                <div className="mt-2 flex items-center justify-between gap-3 text-xs">
+                <div className="mt-2 flex items-center justify-between gap-3 text-xs flex-wrap">
                   <span className="font-semibold text-teal">{job.stage}</span>
-                  <span className="text-ink/50">{job.issue}</span>
+                  <span className="text-ink/50 overflow-hidden whitespace-nowrap text-ellipsis text-right max-w-[120px] sm:max-w-[180px]">{job.issue}</span>
                 </div>
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-ink/8">
                   <motion.div

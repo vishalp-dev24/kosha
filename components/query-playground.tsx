@@ -93,18 +93,18 @@ export function QueryPlayground() {
                 confidence {sourceMissing ? "0.42" : "0.91"}
               </div>
             </div>
-            <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <div className="mt-7 grid gap-3 md:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {retrievedChunks.map((chunk, index) => (
                 <motion.div
                   key={`${runId}-${chunk.chunk}`}
                   initial={reducedMotion ? false : { opacity: 0.25, scale: 0.98 }}
                   animate={reducedMotion ? undefined : { opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.26, duration: 0.35 }}
-                  className="rounded-2xl border border-copper/25 bg-copper/10 p-3"
+                  className="rounded-2xl border border-copper/25 bg-copper/10 p-2.5 md:p-3"
                 >
-                  <div className="font-mono text-xs font-bold text-copper">{chunk.doc}</div>
+                  <div className="font-mono text-xs font-bold text-copper truncate">{chunk.doc}</div>
                   <div className="mt-2 text-xs text-paper/62">p{chunk.page} · {chunk.chunk}</div>
-                  <div className="mt-3 h-1.5 rounded-full bg-paper/10">
+                  <div className="mt-3 h-1.5 rounded-full bg-paper/10 overflow-hidden">
                     <motion.div
                       className="h-full rounded-full bg-copper"
                       initial={reducedMotion ? false : { width: 0 }}
@@ -141,15 +141,15 @@ export function QueryPlayground() {
             </AnimatePresence>
           </div>
           <div className="scrollbar-thin overflow-x-auto rounded-[1.5rem] border border-paper/10 bg-paper/7">
-            <div className="min-w-[640px] divide-y divide-paper/10">
+            <div className="min-w-[320px] sm:min-w-[480px] md:min-w-[640px] divide-y divide-paper/10">
               {retrievedChunks.map((chunk) => (
-                <div key={chunk.chunk} className="grid grid-cols-[1fr_0.6fr_0.8fr] gap-4 p-4 text-sm">
-                  <div>
-                    <div className="font-mono text-xs font-semibold text-paper">{chunk.doc}</div>
-                    <div className="mt-1 text-paper/55">{chunk.reason}</div>
+                <div key={chunk.chunk} className="grid grid-cols-1 sm:grid-cols-[1fr_0.6fr_0.8fr] gap-2 sm:gap-4 p-3 md:p-4 text-sm">
+                  <div className="min-w-0">
+                    <div className="font-mono text-xs font-semibold text-paper truncate">{chunk.doc}</div>
+                    <div className="mt-1 text-paper/55 text-xs md:text-sm overflow-hidden text-ellipsis" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{chunk.reason}</div>
                   </div>
-                  <div className="font-mono text-paper/62">p{chunk.page} · {chunk.chunk}</div>
-                  <div className="text-teal">permission {chunk.permission}</div>
+                  <div className="font-mono text-paper/62 text-xs md:text-sm">p{chunk.page} · {chunk.chunk}</div>
+                  <div className="text-teal text-xs md:text-sm">permission {chunk.permission}</div>
                 </div>
               ))}
             </div>
