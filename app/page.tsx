@@ -15,8 +15,15 @@ import { Badge, ButtonLink, SectionHeader } from "@/components/ui";
 export default function LandingPage() {
   return (
     <MarketingShell>
-      <main className="overflow-hidden">
-        <section className="mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-12 md:px-6 md:pb-20 md:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <main className="relative overflow-hidden">
+        {/* Subtle mesh gradient background */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -left-[10%] -top-[10%] h-[40rem] w-[40rem] rounded-full opacity-[0.06] blur-[120px]"
+            style={{background: "radial-gradient(circle, rgba(47,107,255,0.4) 0%, transparent 70%)"}} />
+          <div className="absolute right-[5%] top-[20%] h-[30rem] w-[30rem] rounded-full opacity-[0.04] blur-[100px]"
+            style={{background: "radial-gradient(circle, rgba(30,158,143,0.5) 0%, transparent 70%)"}} />
+        </div>
+        <section className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-12 md:px-6 md:pb-20 md:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
             <Badge tone="copper">Production-safe document AI</Badge>
             <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.04] tracking-[-0.04em] text-ink md:text-6xl">

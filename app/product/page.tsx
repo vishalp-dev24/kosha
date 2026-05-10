@@ -49,8 +49,13 @@ export default function ProductPage() {
         </MotionSection>
 
         {/* Live Operations - Dark Section */}
-        <MotionSection className="bg-ink py-24 text-paper md:py-32">
-          <div className="mx-auto max-w-7xl px-4 md:px-6">
+        <MotionSection className="relative bg-ink py-24 text-paper md:py-32">
+          {/* Subtle glow background */}
+          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div className="absolute left-1/2 top-1/2 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.1] blur-[150px]"
+              style={{background: "radial-gradient(circle, rgba(47,107,255,0.3) 0%, transparent 60%)"}} />
+          </div>
+          <div className="relative mx-auto max-w-7xl px-4 md:px-6">
             <div className="mb-14 max-w-2xl">
               <Badge tone="teal">Live operations</Badge>
               <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-paper md:text-4xl lg:text-5xl">

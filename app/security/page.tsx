@@ -20,8 +20,13 @@ export default function SecurityPage() {
         <MotionSection className="mx-auto max-w-7xl px-4 pb-20 md:px-6">
           <SecurityControlList />
         </MotionSection>
-        <MotionSection className="bg-ink py-20 text-paper md:py-28">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr]">
+        <MotionSection className="relative bg-ink py-20 text-paper md:py-28">
+          {/* Subtle glow for dark section */}
+          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div className="absolute left-1/2 top-1/2 h-[60rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.08] blur-[150px]"
+              style={{background: "radial-gradient(circle, rgba(47,107,255,0.25) 0%, transparent 60%)"}} />
+          </div>
+          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeader invert eyebrow="Audit posture" title="Every production answer leaves a trace." copy="Query, retrieval, permission, answer, citation, eval, key, and retention events belong in the same reviewable stream." />
             <div className="scrollbar-thin overflow-x-auto rounded-xl border border-paper/10 bg-paper/5">
               {auditEvents.map((event, index) => (
