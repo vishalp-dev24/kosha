@@ -15,6 +15,17 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+/* Design Tokens:
+ * Border Radius Scale (16px base):
+ *   rounded-sm:  4px   (0.25rem)
+ *   rounded:     8px   (0.5rem)  - buttons, small cards
+ *   rounded-lg:  12px  (0.75rem) - default cards
+ *   rounded-xl:  16px  (1rem)    - panels, media
+ *   rounded-2xl: 24px  (1.5rem)  - featured cards
+ *   rounded-3xl: 32px  (2rem)    - hero elements
+ *   rounded-full: 9999px - pills, badges
+ */
+
 const sources = [
   {
     name: "Claims policy",
@@ -115,7 +126,7 @@ export function EvidencePacketHero() {
     <div className="surface-primary relative overflow-hidden p-4 md:p-5">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(184,107,61,0.12),transparent_24rem),radial-gradient(circle_at_100%_20%,rgba(47,111,94,0.12),transparent_20rem)]" />
       <div className="relative grid gap-4">
-        <section className="rounded-[1.75rem] border border-line bg-paper/80 p-5">
+        <section className="rounded-xl border border-line bg-paper/80 p-5">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div className="max-w-md">
               <p className="text-sm font-semibold text-graphite">Evidence packet</p>
@@ -124,9 +135,9 @@ export function EvidencePacketHero() {
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">answered with proof</span>
           </div>
 
-          <div className="mt-5 rounded-[1.5rem] border border-line bg-white p-4">
+          <div className="mt-5 rounded-lg border border-line bg-white p-4">
             <div className="flex items-start gap-3">
-              <div className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-ink text-paper">
+              <div className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-ink text-paper">
                 <SearchCheck className="h-5 w-5" aria-hidden="true" />
               </div>
               <p className="text-base leading-7 text-ink/80">
@@ -139,7 +150,7 @@ export function EvidencePacketHero() {
         </section>
 
         <section className="grid gap-4 xl:grid-cols-[minmax(0,1.28fr)_minmax(14.5rem,0.72fr)] xl:items-stretch">
-          <div className="rounded-[1.5rem] border border-line bg-white p-4">
+          <div className="rounded-lg border border-line bg-white p-4">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="text-sm font-semibold text-graphite">Why this answer is supported</p>
@@ -157,7 +168,7 @@ export function EvidencePacketHero() {
                   transition={reducedMotion ? undefined : { delay: 0.18 + index * 0.12, duration: 0.34 }}
                   className="relative list-none"
                 >
-                  <article className="rounded-[1.15rem] border border-line bg-paper/60 p-3" aria-labelledby={`hero-source-${index}`}>
+                  <article className="rounded-lg border border-line bg-paper/60 p-3" aria-labelledby={`hero-source-${index}`}>
                     <span className="absolute -left-[1.15rem] top-5 grid h-5 w-5 place-items-center rounded-full border-2 border-white bg-copper text-[0.65rem] font-bold text-white shadow-[0_0_0_3px_rgba(184,107,61,0.18)]">
                       {index + 1}
                     </span>
@@ -176,7 +187,7 @@ export function EvidencePacketHero() {
           </div>
 
           <div className="grid h-full gap-3 xl:grid-rows-[auto_1fr]">
-            <div className="rounded-[1.5rem] border border-line bg-white p-4">
+            <div className="rounded-lg border border-line bg-white p-4">
               <div className="flex items-center justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold text-graphite">Answer controls</p>
@@ -186,7 +197,7 @@ export function EvidencePacketHero() {
               </div>
               <div className="mt-4 grid gap-2">
                 {policyChecks.map(({ label, state, icon: Icon }) => (
-                  <div key={label} className="flex items-center justify-between gap-3 rounded-2xl border border-line bg-paper/70 px-3 py-2.5">
+                  <div key={label} className="flex items-center justify-between gap-3 rounded-lg border border-line bg-paper/70 px-3 py-2.5">
                     <span className="flex items-center gap-2 text-sm font-medium text-ink/70">
                       <Icon className="h-4 w-4 text-teal" aria-hidden="true" />
                       {label}
@@ -197,7 +208,7 @@ export function EvidencePacketHero() {
               </div>
             </div>
 
-            <div className="flex h-full flex-col justify-between rounded-[1.5rem] border border-line bg-ink p-4 text-paper">
+            <div className="flex h-full flex-col justify-between rounded-lg border border-line bg-ink p-4 text-paper">
               <div className="flex items-center justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold text-paper/70">If evidence is missing</p>
@@ -205,7 +216,7 @@ export function EvidencePacketHero() {
                 </div>
                 <AlertTriangle className="h-5 w-5 text-copper" aria-hidden="true" />
               </div>
-              <p className="mt-3 rounded-[1.1rem] border border-paper/10 bg-paper/10 p-3 text-sm leading-6 text-paper/75">
+              <p className="mt-3 rounded border border-paper/10 bg-paper/10 p-3 text-sm leading-6 text-paper/75">
                 I do not have enough cited evidence in this collection to answer safely.
               </p>
             </div>
@@ -230,7 +241,7 @@ export function TrustArchitecture() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.06, duration: 0.34 }}
             className={cn(
-              "relative rounded-[1.25rem] border border-line bg-paper/70 p-4",
+              "relative rounded-lg border border-line bg-paper/70 p-4",
               index === 2 || index === 4 || index === 6 ? "bg-white" : ""
             )}
           >
@@ -250,7 +261,7 @@ export function ProductionGapCards() {
     <div className="grid gap-4 sm:grid-cols-2">
       {failureModes.map(([title, copy]) => (
         <article key={title} className="surface-primary flex min-h-36 gap-4 p-5">
-          <div className="grid h-10 w-10 place-items-center rounded-2xl bg-danger/10 text-danger">
+          <div className="grid h-10 w-10 place-items-center rounded-lg bg-danger/10 text-danger">
             <AlertTriangle className="h-5 w-5" aria-hidden="true" />
           </div>
           <div>
@@ -271,7 +282,7 @@ export function ProductProofGrid() {
         return (
           <article key={panel.title} className="surface-primary p-5">
             <div className="flex items-start justify-between gap-4">
-              <div className="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-paper">
+              <div className="grid h-11 w-11 place-items-center rounded-lg bg-ink text-paper">
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </div>
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">{panel.status}</span>
@@ -280,7 +291,7 @@ export function ProductProofGrid() {
             <p className="mt-3 text-sm leading-6 text-ink/70">{panel.copy}</p>
             <div className="mt-5 grid gap-2">
               {panel.rows.map((row) => (
-                <div key={row} className="flex items-center gap-3 rounded-2xl border border-line bg-paper/60 px-3 py-2.5 text-sm font-medium text-ink/70">
+                <div key={row} className="flex items-center gap-3 rounded-lg border border-line bg-paper/60 px-3 py-2.5 text-sm font-medium text-ink/70">
                   <CheckCircle2 className="h-4 w-4 text-teal" aria-hidden="true" />
                   {row}
                 </div>
@@ -297,7 +308,7 @@ export function RegulatedWorkflowCards() {
   return (
     <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
       {workflows.map((workflow) => (
-        <article key={workflow.title} className="rounded-[1.75rem] border border-paper/10 bg-paper p-5 text-ink shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
+        <article key={workflow.title} className="rounded-2xl border border-paper/10 bg-paper p-5 text-ink shadow-card">
           <div className="flex items-center justify-between gap-3">
             <h3 className="text-2xl font-semibold tracking-[-0.04em]">{workflow.title}</h3>
             <FileCheck2 className="h-5 w-5 text-copper" aria-hidden="true" />
@@ -305,7 +316,7 @@ export function RegulatedWorkflowCards() {
           <p className="mt-3 min-h-20 text-sm leading-6 text-ink/70">{workflow.copy}</p>
           <div className="mt-5 grid gap-2">
             {workflow.docs.map((doc) => (
-              <div key={doc} className="rounded-2xl border border-line bg-white px-3 py-2.5 text-sm font-medium text-ink/75">
+              <div key={doc} className="rounded-lg border border-line bg-white px-3 py-2.5 text-sm font-medium text-ink/75">
                 {doc}
               </div>
             ))}
@@ -327,7 +338,7 @@ export function PilotScopeCard() {
           ["Quality bar", "one golden eval set"],
           ["Integration", "one product API"]
         ].map(([label, value], index) => (
-          <div key={label} className={cn("rounded-[1.35rem] border border-line bg-paper/70 p-4 xl:col-span-2", index > 2 ? "xl:col-span-3" : "")}>
+          <div key={label} className={cn("rounded-lg border border-line bg-paper/70 p-4 xl:col-span-2", index > 2 ? "xl:col-span-3" : "")}>
             <div className="text-xs font-semibold uppercase tracking-[0.12em] text-ink/70">{label}</div>
             <div className="mt-3 text-lg font-semibold tracking-[-0.03em]">{value}</div>
           </div>
@@ -342,7 +353,7 @@ export function SecurityPostureStrip() {
     <div className="grid gap-3">
       {securityPosture.map(({ title, copy, icon: Icon }) => (
         <article key={title} className="surface-ink flex gap-4 p-5">
-          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-copper/15 text-copper">
+          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-copper/15 text-copper">
             <Icon className="h-5 w-5" aria-hidden="true" />
           </div>
           <div>

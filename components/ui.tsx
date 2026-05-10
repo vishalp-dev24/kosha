@@ -87,7 +87,7 @@ export function CodeBlock({ code, dark = true }: { code: string; dark?: boolean 
   return (
     <pre
       className={cn(
-        "scrollbar-thin overflow-x-auto rounded-2xl border p-5 font-mono text-xs leading-6 md:text-sm",
+        "scrollbar-thin overflow-x-auto rounded-xl border p-5 font-mono text-xs leading-6 md:text-sm",
         dark ? "border-paper/10 bg-ink text-paper/90" : "border-line bg-white/70 text-ink"
       )}
     >

@@ -42,7 +42,15 @@ const config: Config = {
         teal: "rgb(var(--teal-rgb) / <alpha-value>)",
         success: "rgb(var(--success-rgb) / <alpha-value>)",
         warning: "rgb(var(--warning-rgb) / <alpha-value>)",
-        danger: "rgb(var(--danger-rgb) / <alpha-value>)"
+        danger: "rgb(var(--danger-rgb) / <alpha-value>)",
+        "border-subtle": "var(--border-subtle)",
+        "border-default": "var(--border-default)"
+      },
+      borderRadius: {
+        /* Standardized design tokens */
+        "2xl": "1rem",   /* 16px */
+        "3xl": "1.5rem", /* 24px */
+        "4xl": "2rem"    /* 32px */
       },
       fontFamily: {
         display: ["var(--font-sans)", "Google Sans", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -50,9 +58,12 @@ const config: Config = {
         mono: ["var(--font-mono)", "SFMono-Regular", "Consolas", "monospace"]
       },
       boxShadow: {
-        ledger: "0 24px 70px rgba(21, 23, 26, 0.12)",
+        /* Streamlined shadow system - semantic names */
+        card: "0 24px 70px rgba(21, 23, 26, 0.1)",
         glow: "0 14px 38px rgba(39, 76, 119, 0.16)",
-        copper: "0 12px 30px rgba(184, 107, 61, 0.2)"
+        copper: "0 12px 30px rgba(184, 107, 61, 0.2)",
+        subtle: "0 2px 8px rgba(21, 23, 26, 0.08)",
+        dropdown: "0 18px 60px rgba(21, 23, 26, 0.14)"
       },
       backgroundImage: {
         "ledger-grid":

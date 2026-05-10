@@ -18,7 +18,7 @@ export default function PricingPage() {
             <PricingCard key={plan.name} plan={plan} featured={index === 1} />
           ))}
         </MotionSection>
-        <MotionSection className="mt-16 rounded-[2rem] border border-line bg-white/60 p-6 md:p-10">
+        <MotionSection className="mt-16 rounded-xl border border-line bg-white/60 p-6 md:p-10">
           <SectionHeader title="The first implementation should be narrow." copy="Pick one workflow, one collection, one user role, and one refusal policy. Expanding before proving safety is how RAG projects rot." />
         </MotionSection>
       </main>

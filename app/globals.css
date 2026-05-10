@@ -16,7 +16,7 @@
   --accent-success: #2f6f5e;
   --accent-warning: #ad6b19;
   --accent-danger: #9b3d35;
-  
+
   /* Legacy tokens for backward compatibility */
   --ink: #15171a;
   --slate: #17233b;
@@ -69,8 +69,8 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(circle at 12% 4%, rgba(184, 107, 61, 0.09), transparent 28rem),
-    radial-gradient(circle at 88% 2%, rgba(39, 76, 119, 0.08), transparent 24rem);
+    radial-gradient(circle at 12% 4%, rgba(184, 107, 61, 0.07), transparent 28rem),
+    radial-gradient(circle at 88% 2%, rgba(39, 76, 119, 0.06), transparent 24rem);
 }
 
 body::after {
@@ -141,25 +141,50 @@ a:focus-visible,
 }
 
 @layer components {
+  /* Standardized design tokens - all border-radius values use Tailwind classes */
+  /*
+   * Border Radius Scale:
+   *   rounded-sm:  4px   (0.25rem)
+   *   rounded:     8px   (0.5rem)  - buttons, small cards
+   *   rounded-lg:  12px  (0.75rem) - default cards
+   *   rounded-xl:  16px  (1rem)    - panels, media
+   *   rounded-2xl: 24px  (1.5rem)  - featured cards
+   *   rounded-3xl: 32px  (2rem)    - hero elements
+   */
+
   .surface-primary {
-    @apply rounded-[2rem] border border-line bg-white;
+    @apply rounded-xl border border-line bg-white;
     box-shadow: 0 24px 70px rgba(21, 23, 26, 0.1);
   }
 
   .surface-secondary {
-    @apply rounded-[1.5rem] border border-line;
+    @apply rounded-lg border border-line;
     background: rgb(var(--paper-rgb) / 0.72);
   }
 
   .surface-row {
-    @apply rounded-2xl border border-line;
+    @apply rounded-lg border border-line;
     background: rgb(255 255 255 / 0.72);
   }
 
   .surface-ink {
-    @apply rounded-[1.5rem] border;
+    @apply rounded-lg border;
     border-color: rgb(var(--paper-rgb) / 0.16);
     background: rgb(var(--paper-rgb) / 0.12);
+  }
+
+  /* Standard card component */
+  .card {
+    @apply rounded-xl border border-border-subtle bg-white;
+  }
+
+  /* Button radius standardization */
+  .btn {
+    @apply rounded-lg;
+  }
+
+  .btn-pill {
+    @apply rounded-full;
   }
 }
 

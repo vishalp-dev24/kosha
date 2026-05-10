@@ -27,21 +27,21 @@ export function MarketingShell({ children }: { children: React.ReactNode }) {
               Start a pilot
             </ButtonLink>
             <details className="group relative md:hidden">
-              <summary className="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-full border border-line bg-white text-ink transition hover:border-blue/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+              <summary className="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-xl border border-line bg-white text-ink transition hover:border-blue/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
                 <Menu className="h-4 w-4" aria-hidden="true" />
                 <span className="sr-only">Open menu</span>
               </summary>
-              <div className="absolute right-0 top-12 w-64 rounded-[1.4rem] border border-line bg-white p-2 shadow-[0_18px_60px_rgba(21,23,26,0.14)]">
+              <div className="absolute right-0 top-12 w-64 rounded-xl border border-line bg-white p-2 shadow-dropdown">
                 {navItems.map((item) => (
-                  <Link key={item.href} href={item.href} className="block rounded-2xl px-4 py-3 text-sm font-semibold text-ink/75 transition hover:bg-paper hover:text-ink">
+                  <Link key={item.href} href={item.href} className="block rounded-lg px-4 py-3 text-sm font-semibold text-ink/75 transition hover:bg-paper hover:text-ink">
                     {item.label}
                   </Link>
                 ))}
                 <div className="my-2 h-px bg-line" />
-                <Link href="/login" className="block rounded-2xl px-4 py-3 text-sm font-semibold text-ink/75 transition hover:bg-paper hover:text-ink">
+                <Link href="/login" className="block rounded-lg px-4 py-3 text-sm font-semibold text-ink/75 transition hover:bg-paper hover:text-ink">
                   Log in
                 </Link>
-                <Link href="/signup" className="mt-1 block rounded-2xl bg-blue px-4 py-3 text-sm font-semibold text-white">
+                <Link href="/signup" className="mt-1 block rounded-lg bg-blue px-4 py-3 text-sm font-semibold text-white">
                   Start a pilot
                 </Link>
               </div>

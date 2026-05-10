@@ -152,7 +152,7 @@ export default function LandingPage() {
         </MotionSection>
 
         <MotionSection className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
-          <div className="rounded-[2.25rem] border border-line bg-white p-6 shadow-[0_28px_80px_rgba(21,23,26,0.1)] md:p-10">
+          <div className="rounded-xl border border-line bg-white p-6 shadow-card md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 text-sm font-semibold text-ink/70">
