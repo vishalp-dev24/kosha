@@ -8,21 +8,26 @@ export function DocumentIngestionCard() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="paper-panel overflow-hidden rounded-xl p-4">
-      <div className="flex items-center justify-between">
+    <div className="rounded-xl border border-paper/10 bg-paper/5 p-5 backdrop-blur-sm md:p-6">
+      {/* Header */}
+      <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="text-xs font-bold uppercase tracking-[0.16em] text-ink/48">Ingestion queue</div>
-          <h3 className="mt-2 font-display text-3xl tracking-[-0.06em] text-ink">Parsing in real time</h3>
+          <div className="text-xs font-semibold uppercase tracking-wider text-paper/40">Ingestion queue</div>
+          <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight text-paper md:text-3xl">
+            Parsing in real time
+          </h3>
         </div>
         <motion.div
           animate={reducedMotion ? undefined : { rotate: 360 }}
           transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-          className="grid h-11 w-11 place-items-center rounded-full border border-teal/20 bg-teal/10 text-teal"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-teal/30 bg-teal/10 text-teal"
         >
           <RotateCcw className="h-5 w-5" aria-hidden="true" />
         </motion.div>
       </div>
-        <div className="mt-6 grid gap-3">
+
+      {/* Job cards */}
+      <div className="mt-6 grid gap-3">
         {ingestionJobs.map((job, index) => (
           <motion.div
             key={job.file}
@@ -30,24 +35,24 @@ export function DocumentIngestionCard() {
             whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.08, duration: 0.35 }}
-            className="rounded-xl border border-ink/10 bg-white/68 p-2.5 md:p-3"
+            className="rounded-lg border border-paper/10 bg-ink/40 p-3"
           >
-            <div className="flex items-start gap-2.5 md:gap-3">
-              <div className="grid h-9 w-9 md:h-10 md:w-10 shrink-0 place-items-center rounded-xl bg-ink text-paper">
-                <FileScan className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-paper/10 text-paper">
+                <FileScan className="h-4 w-4" aria-hidden="true" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="truncate font-mono text-xs font-bold text-ink min-w-0 flex-1">{job.file}</div>
-                  <div className="text-xs text-ink/52 shrink-0">{job.pages} pages</div>
+                  <div className="truncate font-mono text-xs font-semibold text-paper">{job.file}</div>
+                  <div className="text-xs text-paper/50">{job.pages} pages</div>
                 </div>
-                <div className="mt-2 flex items-center justify-between gap-3 text-xs flex-wrap">
-                  <span className="rounded-full border border-line bg-white/80 px-2 py-1 font-semibold uppercase tracking-[0.12em] text-ink/54 shrink-0">
+                <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+                  <span className="rounded-full border border-teal/30 bg-teal/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-teal">
                     {job.stage}
                   </span>
-                  <span className="text-ink/50 truncate min-w-0">{job.issue}</span>
+                  <span className="text-xs text-paper/50">{job.issue}</span>
                 </div>
-                <div className="mt-3 h-2 overflow-hidden rounded-full bg-ink/8">
+                <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-paper/10">
                   <motion.div
                     className="h-full rounded-full bg-gradient-to-r from-teal to-blue"
                     initial={reducedMotion ? false : { width: "12%" }}

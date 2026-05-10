@@ -33,11 +33,13 @@ export function QueryPlayground() {
   }
 
   return (
-    <div className="ink-panel overflow-hidden rounded-2xl p-4 md:p-6">
+    <div className="overflow-hidden rounded-xl border border-ink/10 bg-ink p-5 md:p-6">
       <div className="grid gap-6 xl:grid-cols-2 [&>*]:min-w-0">
-        <div className="rounded-xl border border-paper/10 bg-paper/7 p-4">
-          <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/45">Query playground</div>
-          <h2 className="mt-2 font-display text-3xl leading-tight tracking-[-0.05em] text-paper xl:text-4xl">Test the refusal line before users find it.</h2>
+        <div className="rounded-lg border border-paper/10 bg-paper/5 p-5">
+          <div className="text-xs font-semibold uppercase tracking-wider text-paper/40">Query playground</div>
+          <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-paper md:text-3xl">
+            Test the refusal line
+          </h2>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             <Field label="Environment" value={environment} setValue={setEnvironment} options={["Production", "Staging", "Eval"]} />
             <Field label="User role" value={role} setValue={setRole} options={["Claims reviewer", "Compliance auditor", "Support agent"]} />
@@ -51,7 +53,7 @@ export function QueryPlayground() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             rows={5}
-            className="mt-2 w-full resize-none rounded-xl border border-paper/10 bg-ink p-4 text-base leading-7 text-paper outline-none transition focus:border-blue"
+            className="mt-2 w-full resize-none rounded-lg border border-paper/10 bg-ink/50 p-4 text-base leading-relaxed text-paper outline-none transition focus:border-blue"
           />
           <div className="mt-4 flex flex-wrap gap-3">
             <button
@@ -71,8 +73,8 @@ export function QueryPlayground() {
               Copy API request
             </button>
           </div>
-          <div className="mt-5 rounded-xl border border-paper/10 bg-ink p-4 font-mono text-xs leading-6 text-paper/65">
-            <div className="mb-2 flex items-center gap-2 text-paper">
+          <div className="mt-5 rounded-lg border border-paper/10 bg-ink/50 p-4 font-mono text-xs leading-relaxed text-paper/60">
+            <div className="mb-2 flex items-center gap-2 text-paper/80">
               <Braces className="h-4 w-4 text-blue" aria-hidden="true" />
               request preview
             </div>
@@ -81,10 +83,10 @@ export function QueryPlayground() {
         </div>
 
         <div className="grid gap-4">
-          <div className="rounded-xl border border-paper/10 bg-paper/7 p-4">
-            <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="rounded-lg border border-paper/10 bg-paper/5 p-5">
+              <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <div className="text-xs font-bold uppercase tracking-[0.16em] text-paper/45">Policy decision</div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-paper/40">Policy decision</div>
                 <div className={sourceMissing ? "mt-2 text-2xl font-semibold text-warning" : "mt-2 text-2xl font-semibold text-teal"}>
                   {sourceMissing ? "needs review / refused" : "answered"}
                 </div>
@@ -100,7 +102,7 @@ export function QueryPlayground() {
                   initial={reducedMotion ? false : { opacity: 0.25, scale: 0.98 }}
                   animate={reducedMotion ? undefined : { opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.26, duration: 0.35 }}
-                  className="rounded-xl border border-copper/25 bg-copper/10 p-2.5 md:p-3"
+                  className="rounded-lg border border-copper/25 bg-copper/10 p-3"
                 >
                   <div className="font-mono text-xs font-bold text-copper truncate">{chunk.doc}</div>
                   <div className="mt-2 text-xs text-paper/62">p{chunk.page} · {chunk.chunk}</div>
@@ -122,7 +124,7 @@ export function QueryPlayground() {
                 animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
                 exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
                 transition={{ delay: 0.72, duration: 0.35 }}
-                className="mt-5 rounded-xl border border-paper/10 bg-ink p-5"
+                className="mt-5 rounded-lg border border-paper/10 bg-ink/50 p-5"
               >
                 {sourceMissing ? (
                   <div className="flex items-start gap-3">
@@ -140,7 +142,7 @@ export function QueryPlayground() {
               </motion.div>
             </AnimatePresence>
           </div>
-          <div className="scrollbar-thin overflow-x-auto rounded-xl border border-paper/10 bg-paper/7">
+          <div className="scrollbar-thin overflow-x-auto rounded-lg border border-paper/10 bg-paper/5">
             <div className="divide-y divide-paper/10">
               {retrievedChunks.map((chunk) => (
                 <div key={chunk.chunk} className="grid grid-cols-1 sm:grid-cols-[1fr_0.6fr_0.8fr] gap-2 sm:gap-4 p-3 md:p-4 text-sm">
@@ -177,7 +179,7 @@ function Field({
       <select
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        className="mt-2 w-full rounded-xl border border-paper/10 bg-ink px-3 py-3 text-sm font-semibold text-paper outline-none transition focus:border-blue"
+        className="mt-2 w-full rounded-lg border border-paper/10 bg-ink/50 px-3 py-3 text-sm font-semibold text-paper outline-none transition focus:border-blue"
       >
         {options.map((option) => (
           <option key={option}>{option}</option>

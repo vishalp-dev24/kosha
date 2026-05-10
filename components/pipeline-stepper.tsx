@@ -7,33 +7,41 @@ export function PipelineStepper() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="rounded-xl border border-line bg-white/56 p-3 md:p-4">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 xl:grid-cols-5">
+    <div className="relative">
+      {/* Connection line - desktop only */}
+      <div className="absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-line to-transparent xl:block" />
+      
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {pipelineSteps.map((step, index) => (
           <motion.article
             key={step.title}
-            initial={reducedMotion ? false : { opacity: 0.32, y: 18 }}
+            initial={reducedMotion ? false : { opacity: 0, y: 20 }}
             whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-120px" }}
-            transition={{ delay: index * 0.16, duration: 0.45, ease: "easeOut" }}
-            className="relative flex flex-col rounded-xl border border-ink/10 bg-paper/82 p-3 md:p-4"
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ delay: index * 0.08, duration: 0.4, ease: "easeOut" }}
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-line bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
           >
-            {index < pipelineSteps.length - 1 ? (
-              <motion.div
-                aria-hidden="true"
-                className="absolute left-[calc(100%+0.375rem)] top-8 hidden h-px w-2 bg-blue/50 md:left-[calc(100%+0.5rem)] md:w-3 xl:block"
-                initial={reducedMotion ? false : { scaleX: 0 }}
-                whileInView={reducedMotion ? undefined : { scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.22 + index * 0.16, duration: 0.35 }}
-              />
-            ) : null}
-            <div className="flex items-center gap-2 md:gap-3">
-              <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-ink font-mono text-xs font-bold text-paper md:h-10 md:w-10 md:text-sm">{index + 1}</div>
-              <h3 className="line-clamp-2 text-base font-semibold leading-tight tracking-[-0.04em] text-ink md:text-xl">{step.title}</h3>
+            {/* Step number badge */}
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ink font-mono text-sm font-semibold text-paper">
+                {index + 1}
+              </div>
+              <div className="h-px flex-1 bg-gradient-to-r from-line to-transparent" />
             </div>
-            <p className="mt-3 line-clamp-2 text-xs font-semibold leading-5 text-ink/78 md:mt-4 md:text-sm">{step.label}</p>
-            <p className="mt-2 line-clamp-3 flex-grow text-xs leading-5 text-ink/58 md:mt-3 md:text-sm md:leading-6">{step.detail}</p>
+
+            {/* Content */}
+            <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-ink">
+              {step.title}
+            </h3>
+            <p className="mt-1 text-sm font-medium text-ink/70">
+              {step.label}
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-ink/50">
+              {step.detail}
+            </p>
+
+            {/* Connector dot - desktop */}
+            <div className="absolute -right-2 top-12 hidden h-2 w-2 rounded-full bg-line group-last:hidden xl:block" />
           </motion.article>
         ))}
       </div>

@@ -54,7 +54,7 @@ export function AnimatedPipeline() {
   }, [reducedMotion]);
 
   return (
-    <div className="paper-panel scrollbar-thin relative overflow-hidden rounded-2xl p-3 md:p-5" aria-label="Kosha document ingestion to cited API response visual">
+    <div className="paper-panel scrollbar-thin relative overflow-hidden rounded-xl p-4 md:p-6" aria-label="Kosha document ingestion to cited API response visual">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(47,107,255,0.16),transparent_22rem)]" />
       <div className="relative overflow-hidden">
         <div 
@@ -63,7 +63,7 @@ export function AnimatedPipeline() {
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mb-4 [&::-webkit-scrollbar]:hidden"
           style={{ msOverflowStyle: "none", scrollbarWidth: "none" }}
         >
-          <div className="w-full shrink-0 snap-center rounded-3xl border border-line/80 bg-white/62 p-4 cursor-pointer" onClick={() => scrollToSlide(0)}>
+          <div className="w-full shrink-0 snap-center rounded-xl border border-line/80 bg-white/62 p-4 cursor-pointer" onClick={() => scrollToSlide(0)}>
           <div className="mb-4 flex items-center justify-between">
             <div className="text-xs font-bold uppercase tracking-[0.16em] text-ink/50">Document intake</div>
             <div className="rounded-full bg-teal/10 px-2 py-1 text-xs font-semibold text-teal">live sync</div>
@@ -102,7 +102,7 @@ export function AnimatedPipeline() {
           </div>
         </div>
 
-        <div className="relative w-full shrink-0 snap-center flex items-center justify-center overflow-hidden rounded-3xl border border-ink/10 bg-ink p-4 text-paper cursor-pointer" onClick={() => scrollToSlide(1)}>
+        <div className="relative w-full shrink-0 snap-center flex items-center justify-center overflow-hidden rounded-xl border border-ink/10 bg-ink p-4 text-paper cursor-pointer" onClick={() => scrollToSlide(1)}>
           <svg className="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 260 430" fill="none" aria-hidden="true">
             {[92, 150, 208, 266].map((start, index) => (
               <motion.path
@@ -136,7 +136,7 @@ export function AnimatedPipeline() {
           </div>
         </div>
 
-        <div className="w-full shrink-0 snap-center rounded-3xl border border-line/80 bg-white/68 p-4 cursor-pointer" onClick={() => scrollToSlide(2)}>
+        <div className="w-full shrink-0 snap-center rounded-xl border border-line/80 bg-white/68 p-4 cursor-pointer" onClick={() => scrollToSlide(2)}>
           <div className="mb-4 flex items-center justify-between">
             <div className="text-xs font-bold uppercase tracking-[0.16em] text-ink/50">API response</div>
             <Braces className="h-4 w-4 text-blue" aria-hidden="true" />

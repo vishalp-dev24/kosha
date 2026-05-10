@@ -73,12 +73,12 @@ export function SectionHeader({
   invert?: boolean;
 }) {
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-2xl">
       {eyebrow ? <Badge tone={invert ? "teal" : "slate"}>{eyebrow}</Badge> : null}
-      <h2 className={cn("mt-5 font-display text-3xl font-semibold leading-[1.08] tracking-[-0.04em] md:text-4xl lg:text-5xl", invert ? "text-paper" : "text-ink")}>
+      <h2 className={cn("mt-4 font-display text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl", invert ? "text-paper" : "text-ink")}>
         {title}
       </h2>
-      {copy ? <p className={cn("mt-5 max-w-2xl text-base leading-7 md:text-lg", invert ? "text-paper/65" : "text-ink/65")}>{copy}</p> : null}
+      {copy ? <p className={cn("mt-4 max-w-xl text-lg leading-relaxed", invert ? "text-paper/60" : "text-ink/60")}>{copy}</p> : null}
     </div>
   );
 }

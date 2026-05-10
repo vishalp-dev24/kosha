@@ -1,18 +1,46 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { securityControls } from "@/data/kosha";
 
 export function SecurityControlList({ dark = false }: { dark?: boolean }) {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
-      {securityControls.map((control) => {
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {securityControls.map((control, index) => {
         const Icon = control.icon;
         return (
-          <article key={control.title} className={dark ? "rounded-2xl bg-white/10 p-4 md:p-5" : "rounded-2xl bg-white/70 p-4 md:p-5 shadow-sm"}>
-            <div className={dark ? "grid h-10 w-10 md:h-11 md:w-11 place-items-center rounded-xl bg-teal/10 text-teal" : "grid h-10 w-10 md:h-11 md:w-11 place-items-center rounded-xl bg-ink text-paper"}>
-              <Icon className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
+          <motion.article
+            key={control.title}
+            initial={reducedMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ delay: index * 0.06, duration: 0.35 }}
+            className={dark 
+              ? "flex flex-col rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm" 
+              : "flex flex-col rounded-xl border border-line bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+            }
+          >
+            <div className={dark 
+              ? "flex h-10 w-10 items-center justify-center rounded-lg bg-teal/20 text-teal" 
+              : "flex h-10 w-10 items-center justify-center rounded-lg bg-ink text-paper"
+            }>
+              <Icon className="h-5 w-5" aria-hidden="true" />
             </div>
-            <h3 className={dark ? "mt-4 md:mt-5 text-lg md:text-xl font-semibold text-paper leading-tight" : "mt-4 md:mt-5 text-lg md:text-xl font-semibold text-ink leading-tight"} style={ { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', textOverflow: 'ellipsis' } }>{control.title}</h3>
-            <p className={dark ? "mt-2 text-sm leading-5 md:leading-6 text-paper/65" : "mt-2 text-sm leading-5 md:leading-6 text-ink/65"} style={ { display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical', overflow: 'hidden', textOverflow: 'ellipsis' } }>{control.detail}</p>
-          </article>
+            <h3 className={dark 
+              ? "mt-4 font-display text-lg font-semibold leading-snug text-paper" 
+              : "mt-4 font-display text-lg font-semibold leading-snug text-ink"
+            }>
+              {control.title}
+            </h3>
+            <p className={dark 
+              ? "mt-2 text-sm leading-relaxed text-paper/60" 
+              : "mt-2 text-sm leading-relaxed text-ink/60"
+            }>
+              {control.detail}
+            </p>
+          </motion.article>
         );
       })}
     </div>
