@@ -28,10 +28,12 @@ export default function SecurityPage() {
           </div>
           <div className="relative mx-auto grid max-w-7xl gap-8 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeader invert eyebrow="Audit posture" title="Every production answer leaves a trace." copy="Query, retrieval, permission, answer, citation, eval, key, and retention events belong in the same reviewable stream." />
-            <div className="scrollbar-thin overflow-x-auto rounded-2xl border border-paper/15 bg-paper/5">
-              {auditEvents.map((event, index) => (
-                <AuditEventRow key={event.trace} event={event} index={index} />
-              ))}
+            <div className="scrollbar-thin overflow-x-auto rounded-2xl border border-paper/15 bg-paper/5 pb-4">
+              <div className="min-w-max">
+                {auditEvents.map((event, index) => (
+                  <AuditEventRow key={event.trace} event={event} index={index} />
+                ))}
+              </div>
             </div>
           </div>
         </MotionSection>

@@ -7,7 +7,7 @@ export function SecurityControlList({ dark = false }: { dark?: boolean }) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {securityControls.map((control, index) => {
         const Icon = control.icon;
         return (
@@ -18,8 +18,8 @@ export function SecurityControlList({ dark = false }: { dark?: boolean }) {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ delay: index * 0.06, duration: 0.35 }}
             className={dark 
-              ? "flex flex-col rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm" 
-              : "flex flex-col rounded-xl border border-line bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              ? "flex flex-col min-h-[180px] overflow-hidden rounded-xl border border-white/15 bg-white/5 p-5 backdrop-blur-sm" 
+              : "flex flex-col min-h-[180px] overflow-hidden rounded-xl border border-line bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
             }
           >
             <div className={dark 

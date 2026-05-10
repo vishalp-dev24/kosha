@@ -14,7 +14,7 @@ export function PricingCard({ plan, featured = false }: { plan: PricingPlan; fea
   return (
     <article
       className={cn(
-        "flex h-full flex-col rounded-2xl border p-6",
+        "flex h-full min-h-[480px] flex-col justify-between rounded-2xl border p-5",
         featured
           ? "border-blue bg-ink text-paper shadow-glow"
           : "border-line bg-white/64 text-ink"
@@ -26,16 +26,16 @@ export function PricingCard({ plan, featured = false }: { plan: PricingPlan; fea
           <p className={cn("mt-2 text-sm leading-6", featured ? "text-paper/60" : "text-ink/60")}>{plan.description}</p>
         </div>
         {featured ? (
-          <span className="shrink-0 rounded-full bg-blue px-2.5 py-0.5 text-xs font-bold uppercase tracking-[0.14em] text-white">
-            recommended
+          <span className="shrink-0 rounded-full bg-blue px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white">
+            Best
           </span>
         ) : null}
       </div>
       <div className="mt-8">
-        <div className="text-5xl md:text-6xl font-semibold tracking-[-0.06em]">{plan.price}</div>
+        <div className="text-4xl md:text-5xl font-semibold tracking-[-0.06em]">{plan.price}</div>
         <div className={cn("mt-1 text-sm", featured ? "text-paper/60" : "text-ink/60")}>{plan.cadence}</div>
       </div>
-      <div className="mt-6 flex flex-col gap-3">
+      <div className="mt-6 flex flex-1 flex-col gap-2.5">
         {plan.features.map((feature) => (
           <div key={feature} className={cn("flex items-start gap-3 text-sm", featured ? "text-paper/70" : "text-ink/70")}>
             <span className={cn("grid h-5 w-5 shrink-0 place-items-center rounded-full", featured ? "bg-teal/15 text-teal" : "bg-teal/10 text-teal")}>
@@ -45,9 +45,11 @@ export function PricingCard({ plan, featured = false }: { plan: PricingPlan; fea
           </div>
         ))}
       </div>
-      <ButtonLink href="/signup" variant={featured ? "primary" : "secondary"} className="mt-6 w-full">
-        Start a pilot
-      </ButtonLink>
+      <div className="mt-auto">
+        <ButtonLink href="/signup" variant={featured ? "primary" : "secondary"} className="mt-4 w-full">
+          Start a pilot
+        </ButtonLink>
+      </div>
     </article>
   );
 }

@@ -4,13 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Braces, FileText, LockKeyhole, ShieldCheck } from "lucide-react";
 import { heroDocuments } from "@/data/kosha";
 
-const pathVariants = {
-  animate: {
-    pathLength: [0, 1, 1],
-    opacity: [0.15, 0.9, 0.28]
-  }
-};
-
 export function AnimatedPipeline() {
   const reducedMotion = useReducedMotion();
 
@@ -32,9 +25,10 @@ export function AnimatedPipeline() {
               {heroDocuments.map((doc, index) => (
                 <motion.div
                   key={doc.name}
-                  initial={reducedMotion ? false : { opacity: 0, x: -16 }}
-                  animate={reducedMotion ? undefined : { opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.12, duration: 0.45 }}
+                  initial={reducedMotion ? false : { opacity: 0 }}
+                  animate={reducedMotion ? undefined : { opacity: 1 }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  style={{ willChange: "opacity" }}
                   className="rounded-xl border border-ink/10 bg-paper/72 p-3"
                 >
                   <div className="flex items-start gap-3">
@@ -71,17 +65,19 @@ export function AnimatedPipeline() {
                   stroke={index % 2 === 0 ? "#2F6BFF" : "#B87333"}
                   strokeWidth="1.4"
                   strokeLinecap="round"
-                  variants={pathVariants}
-                  initial={reducedMotion ? undefined : { pathLength: 0, opacity: 0.12 }}
-                  animate={reducedMotion ? undefined : "animate"}
-                  transition={{ duration: 2.3, repeat: Infinity, delay: index * 0.35, ease: "easeInOut" }}
+                  initial={reducedMotion ? undefined : { opacity: 0.2 }}
+                  animate={reducedMotion ? undefined : { opacity: [0.2, 0.6, 0.2] }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.3, ease: "easeInOut" }}
+                  style={{ willChange: "opacity" }}
                 />
               ))}
             </svg>
             <div className="relative z-10 text-center">
               <motion.div
-                animate={reducedMotion ? undefined : { boxShadow: ["0 0 0 rgba(30,158,143,0)", "0 0 38px rgba(30,158,143,.36)", "0 0 0 rgba(30,158,143,0)"] }}
-                transition={{ duration: 2.4, repeat: Infinity }}
+                initial={reducedMotion ? undefined : { opacity: 0.8 }}
+                animate={reducedMotion ? undefined : { opacity: [0.8, 1, 0.8] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                style={{ willChange: "opacity" }}
                 className="mx-auto grid h-20 w-20 place-items-center rounded-xl border border-teal/30 bg-teal/12"
               >
                 <LockKeyhole className="h-7 w-7 text-teal" aria-hidden="true" />
@@ -109,23 +105,32 @@ export function AnimatedPipeline() {
               <motion.div
                 initial={reducedMotion ? false : { opacity: 0 }}
                 animate={reducedMotion ? undefined : { opacity: 1 }}
-                transition={{ delay: 1.1, duration: 0.5 }}
+                transition={{ delay: 0.8, duration: 0.4 }}
+                style={{ willChange: "opacity" }}
                 className="overflow-hidden rounded-xl border border-paper/10 bg-paper/6 p-3 font-sans text-sm leading-6 text-paper"
               >
                 Late submission can trigger review, but rejection needs cited policy basis and documented exception checks.
               </motion.div>
               <div className="mt-3 text-paper/68">citations:</div>
               <motion.div
-                initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-                animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-                transition={{ delay: 1.35, duration: 0.4 }}
+                initial={reducedMotion ? false : { opacity: 0 }}
+                animate={reducedMotion ? undefined : { opacity: 1 }}
+                transition={{ delay: 1.0, duration: 0.4 }}
+                style={{ willChange: "opacity" }}
                 className="mt-2 grid gap-2"
               >
-                {["claims-policy.docx p18", "exceptions-addendum.pdf p3"].map((citation) => (
-                  <div key={citation} className="flex items-center justify-between gap-2 overflow-hidden rounded-lg border border-copper/20 bg-copper/10 px-3 py-2 text-copper">
+                {["claims-policy.docx p18", "exceptions-addendum.pdf p3"].map((citation, index) => (
+                  <motion.div
+                    key={citation}
+                    initial={reducedMotion ? false : { opacity: 0 }}
+                    animate={reducedMotion ? undefined : { opacity: 1 }}
+                    transition={{ delay: 1.0 + index * 0.1, duration: 0.3 }}
+                    style={{ willChange: "opacity" }}
+                    className="flex items-center justify-between gap-2 overflow-hidden rounded-lg border border-copper/20 bg-copper/10 px-3 py-2 text-copper"
+                  >
                     <span className="truncate">{citation}</span>
                     <ShieldCheck className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                  </div>
+                  </motion.div>
                 ))}
               </motion.div>
               <div className="mt-4 flex items-center gap-2 text-blue">
